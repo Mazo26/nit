@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(45deg, #e66465, #9198e5);
+}
+
+li{
+    list-style-type: none;
+    display: block;
+}
+
+.body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#card{
+    width: 700px;
+    height: fit-content;
+    background-color: rgb(240, 239, 237, 0.8);
+    border-radius: 30px solid #e0e0de;
+    text-align: center;
+    padding: 5%;
+}
+
+#toDoAdd{
+    border: 1px solid #5c5b5a;
+    border-radius: 4px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 25px;
+    background-color: aliceblue;
+    padding: auto;
+}
+
+.inputs{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.goals{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#addGoal{
+    border: 1px solid #5c5b5a;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: auto;
+    background-color: aliceblue;
+
+}
