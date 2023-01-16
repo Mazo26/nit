@@ -1,0 +1,23 @@
+body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main{
+    display: flex;
+}
+
+.first{
+    width: 80%;
+    height: 100%;
+}
+
+.second{
+    width: 20%;
+    height: 100%;
+    border-left: 1px solid black;
+    display: block;
+}

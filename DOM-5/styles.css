@@ -58,3 +58,12 @@ li{
     background-color: aliceblue;
 
 }
+
+#editGoal{
+    border: 1px solid #5c5b5a;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: auto;
+    background-color: aliceblue;
+
+}
