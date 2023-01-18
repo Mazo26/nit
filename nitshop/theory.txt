@@ -1,0 +1,23 @@
+In React.js, a component is a piece of code that represents a part of a user interface. 
+It can be a class component or a functional component. 
+Class component is a js class that extends React.Component class, while a functional
+component is a js
+function that returns only the React element.
+
+A PureComeponent is a special type of component that is similar to a component, 
+but with additional features
+or optimizations. When a component is a PureComeponent, 
+React will do a shallow comparison of the props and
+state before re-rendering the component. That means that if props and state 
+have not changed, the component
+will not be re-rendering. This can lead to a performance boost in some cases, 
+but if it's not used properly,
+it can lead to unexpected behaviour.
+
+Bottomline, a componenent is the most basic and most used for building 
+a block in React and PureComeponent
+is used when it needs some special optimizations.
+
+Props(properties) is a way for manipulating data and states
+We can send data through props and we can send 
+data to parent through props
