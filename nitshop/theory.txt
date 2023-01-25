@@ -26,4 +26,11 @@ Parent component is component which is created
 Child component is component which is included in Parent component
 Parent componenent can have more than one Child compinents
 Child components can be also found in other components as children(prop)
-children as a prop is a reserved name   
+children as a prop is a reserved name  
+
+
+Practise for class:
+- Build a simple counter which will increment number by clicking the button
+(styling is optional)
+
+- Build to-do app (styling is optional)
