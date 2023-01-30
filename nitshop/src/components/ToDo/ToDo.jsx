@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ToDo.css";
+import CustomDiv from "../CustomDiv/CustomDiv";
 
 function ToDo() {
   const [todos, setTodos] = useState([]);
@@ -7,17 +8,24 @@ function ToDo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (input === "") return;
+
     setTodos([...todos, input]);
     setInput("");
   };
 
   const handleDelete = (index) => {
-    setTodos(todos.filter((todo, i) => i !== index));
+    let filteredArr = todos.filter((todo, i) => i !== index);
+    setTodos(filteredArr);
   };
 
   return (
     <div className='app'>
       <h1>To-Do App</h1>
+      <CustomDiv>
+        <p>HAHA</p>
+      </CustomDiv>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
