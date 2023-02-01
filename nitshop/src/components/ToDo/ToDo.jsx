@@ -23,9 +23,6 @@ function ToDo() {
   return (
     <div className='app'>
       <h1>To-Do App</h1>
-      <CustomDiv>
-        <p>HAHA</p>
-      </CustomDiv>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
