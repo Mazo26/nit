@@ -1,16 +1,11 @@
 import React from "react";
 import "./App.css";
-import ToDo from "./components/ToDo/ToDo";
-import GridCmp from "./components/Grid/Grid";
-import PrimaryButton from "./components/PrimaryButton/PrimaryButton";
-import StyledButton from "./components/StyledButton/StyledButton";
+import Navigation from "./Templates/Navigation/Navigation";
 
 const App = () => {
   return (
     <>
-      <PrimaryButton padding={10} borderColor='yellow'>
-        Primary button
-      </PrimaryButton>
+      <Navigation />
     </>
   );
 };
