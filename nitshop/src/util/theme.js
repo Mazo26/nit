@@ -15,6 +15,7 @@ export const fontWeight = {
 export const fontSize = {
   xSmall: "10px",
   small: "12px",
+  smallPlus: "14px",
   normal: "16px",
   medium: "18px",
   large: "24px",

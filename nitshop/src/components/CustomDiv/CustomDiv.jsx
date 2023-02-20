@@ -18,6 +18,7 @@ const CustomDiv = ({
   verticalAlign,
   textAlign,
   letterSpacing,
+  borderBottom,
 }) => {
   const divWidth = width ? width : "auto";
   const divHeight = height ? height : "auto";
@@ -34,6 +35,7 @@ const CustomDiv = ({
   const va = verticalAlign ? verticalAlign : "middle";
   const ta = textAlign ? textAlign : "left";
   const ls = letterSpacing ? letterSpacing : "0px";
+  const bb = borderBottom ? borderBottom : "0px";
 
   return (
     <div
@@ -53,6 +55,7 @@ const CustomDiv = ({
         verticalAlign: va,
         textAlign: ta,
         letterSpacing: ls,
+        borderBottom: bb,
       }}
     >
       {children}

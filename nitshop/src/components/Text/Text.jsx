@@ -20,6 +20,7 @@ const Text = styled.p`
   padding-left: ${(props) => (props.pl ? props.pl : "0px")};
   padding-right: ${(props) => (props.pr ? props.pr : "0px")};
   padding-bottom: ${(props) => (props.pb ? props.pb : "0px")};
+  color: ${(props) => (props.color ? props.color : "black")};
 `;
 
 export default Text;
