@@ -63,7 +63,7 @@ const MainBar = () => {
       display='flex'
       width='100%'
       height='auto'
-      padding='20px 10%'
+      padding='20px 10% 10px'
       border='0px'
     >
       <Grid container direction='row'>
