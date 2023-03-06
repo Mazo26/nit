@@ -39,12 +39,12 @@ const SocialIcons = () => (
 const TopRow = () => {
   const screenWidth = getScreenWidth();
 
-  console.log(screenWidth);
-
   const alignItemsInFirstDiv = screenWidth === "SM" ? "center" : "flex-start";
   const alignItemsInSecondDiv = screenWidth === "SM" ? "center" : "flex-end";
   const paddingInDiv = screenWidth === "SM" ? "10px 0px" : "0px";
   const topDivHeight = screenWidth === "SM" ? "auto" : "30px";
+  const responsivePadding =
+    screenWidth === "SM" ? "0px" : screenWidth === "MD" ? "0px" : "0px 10%";
 
   return (
     <CustomDiv
@@ -52,8 +52,9 @@ const TopRow = () => {
       display='flex'
       width='100%'
       height={topDivHeight}
-      padding='0px 10%'
+      padding={responsivePadding}
       border='0px'
+      alignItems='center'
     >
       <Grid container direction='row'>
         <Grid item xs={12} sm={6} md={6} lg={6}>
