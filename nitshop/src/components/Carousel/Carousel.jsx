@@ -30,10 +30,10 @@ const Carousel = ({ data }) => {
       swipeable
     >
       {data.map((d) => (
-        <div key={d} style={{ height: "400px" }}>
+        <div key={d} style={{ width: "100%", height: "400px" }}>
           <img
             src={d.imgSrc}
-            style={{ height: "100%", objectFit: "contain" }}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
             alt={d.imgText}
           />
           <SimplifiedDiv style={styles.carouselText}>
