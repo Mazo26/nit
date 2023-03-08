@@ -8,6 +8,10 @@ const styles = {
   container: {
     padding: "0px 10%",
   },
+  headingContainer: {
+    width: "100%",
+    textAlign: "center",
+  },
 };
 
 const ProductsHomePage = () => {
@@ -15,10 +19,15 @@ const ProductsHomePage = () => {
     <SimplifiedDiv style={styles.container}>
       <Grid container direction='row'>
         <Grid item md={3} lg={3}>
+          <SimplifiedDiv style={styles.headingContainer}>
+            <Text>Category</Text>
+          </SimplifiedDiv>
           <CategoryTab />
         </Grid>
         <Grid item md={9} lg={9}>
-          <Text>Grid 8</Text>
+          <SimplifiedDiv style={styles.headingContainer}>
+            <Text>Articles</Text>
+          </SimplifiedDiv>
         </Grid>
       </Grid>
     </SimplifiedDiv>
