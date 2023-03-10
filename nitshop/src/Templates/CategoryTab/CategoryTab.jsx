@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
-import { colors } from "../../util/theme";
+import { colors, fontSize } from "../../util/theme";
 import AddIcon from "@mui/icons-material/Add";
 
 const categories = [
@@ -81,9 +81,10 @@ const subCategory = [
 ];
 
 const CategoryTab = () => {
+  const [isOpenCategory, setIsOpenCategory] = useState(categories);
+
   const styles = {
     container: {
-      width: "100%",
       border: `0.5px solid ${colors.lightGray}`,
       borderRadius: "2px",
       textAlign: "left",
@@ -92,12 +93,65 @@ const CategoryTab = () => {
     category: {
       padding: "5px 0px",
     },
+    categoryContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    addIconStyle: {
+      fontSize: fontSize.medium,
+      color: colors.accentColor,
+    },
+    subCategoryContainer: {
+      padding: "0px 10px",
+    },
+    subCategoryText: {
+      fontSize: fontSize.smallPlus,
+      color: colors.gray,
+      padding: "2px 0px",
+    },
   };
+
+  console.log(isOpenCategory);
 
   return (
     <SimplifiedDiv style={styles.container}>
-      {categories.map((cat) => {
-        return <Text style={styles.category}>{cat.name}</Text>;
+      {categories.map((cat, index) => {
+        const filteredSubcategories = subCategory.filter(
+          (sub) => sub.categoryName === cat.name
+        );
+
+        return (
+          <>
+            <SimplifiedDiv style={styles.categoryContainer}>
+              <Text style={styles.category}>{cat.name}</Text>
+              {filteredSubcategories.length > 0 && (
+                <AddIcon
+                  style={styles.addIconStyle}
+                  onClick={() => {
+                    let findInArray = isOpenCategory.find(
+                      (category) => category.name === cat.name
+                    );
+                    let changeVal = {
+                      ...findInArray,
+                      active: !findInArray.active,
+                    };
+                    console.log(changeVal);
+                    setIsOpenCategory([...isOpenCategory, changeVal]);
+                  }}
+                />
+              )}
+            </SimplifiedDiv>
+            {filteredSubcategories.length > 0 &&
+              isOpenCategory[index].active && (
+                <SimplifiedDiv style={styles.subCategoryContainer}>
+                  {filteredSubcategories.map((sub) => (
+                    <Text style={styles.subCategoryText}>{sub.name}</Text>
+                  ))}
+                </SimplifiedDiv>
+              )}
+          </>
+        );
       })}
     </SimplifiedDiv>
   );
