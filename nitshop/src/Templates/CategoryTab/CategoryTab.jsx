@@ -129,15 +129,19 @@ const CategoryTab = () => {
                 <AddIcon
                   style={styles.addIconStyle}
                   onClick={() => {
-                    let findInArray = isOpenCategory.find(
-                      (category) => category.name === cat.name
-                    );
-                    let changeVal = {
-                      ...findInArray,
-                      active: !findInArray.active,
-                    };
-                    console.log(changeVal);
-                    setIsOpenCategory([...isOpenCategory, changeVal]);
+                    let changedState = isOpenCategory.map((category) => {
+                      if (category.name === cat.name) {
+                        let change = {
+                          ...category,
+                          active: !category.active,
+                        };
+                        return change;
+                      }
+
+                      return category;
+                    });
+
+                    setIsOpenCategory(changedState);
                   }}
                 />
               )}
