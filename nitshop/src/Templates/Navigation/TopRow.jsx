@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import CustomDiv from "../../components/CustomDiv/CustomDiv";
-import { colors, fontSize } from "../../util/theme";
+import { colors, fontFamily, fontSize } from "../../util/theme";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -69,7 +69,9 @@ const TopRow = () => {
                 fontSize: fontSize.normal,
               }}
             />
-            <Text fontSize={fontSize.small}>+38163333333</Text>
+            <Text fontFamily={fontFamily.LatoRegular} fontSize={fontSize.small}>
+              +38163333333
+            </Text>
             <CustomDiv
               display='flex'
               alignItems='center'
@@ -80,7 +82,12 @@ const TopRow = () => {
                   fontSize: fontSize.normal,
                 }}
               />
-              <Text fontSize={fontSize.small}>info@mail.com</Text>
+              <Text
+                fontFamily={fontFamily.LatoRegular}
+                fontSize={fontSize.small}
+              >
+                info@mail.com
+              </Text>
             </CustomDiv>
           </CustomDiv>
         </Grid>

@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import CustomDiv from "../../components/CustomDiv/CustomDiv";
 import Logo from "../../assets/images/logo.png";
 import Text from "../../components/Text/Text";
-import { colors, fontSize } from "../../util/theme";
+import { colors, fontSize, fontFamily } from "../../util/theme";
 import { getScreenWidth } from "../../util/helpers";
 
 import PersonIcon from "@mui/icons-material/Person";
@@ -35,31 +35,51 @@ const MainBar = () => {
     >
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <PersonIcon style={iconStyle} />
-        <Text fontSize={fontSize.smallPlus} color={colors.gray}>
+        <Text
+          fontFamily={fontFamily.LatoRegular}
+          fontSize={fontSize.smallPlus}
+          color={colors.gray}
+        >
           Account
         </Text>
       </CustomDiv>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <StarIcon style={iconStyle} />
-        <Text fontSize={fontSize.smallPlus} color={colors.gray}>
+        <Text
+          fontFamily={fontFamily.LatoRegular}
+          fontSize={fontSize.smallPlus}
+          color={colors.gray}
+        >
           Wishlist
         </Text>
       </CustomDiv>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <LocationSearchingIcon style={iconStyle} />
-        <Text fontSize={fontSize.smallPlus} color={colors.gray}>
+        <Text
+          fontFamily={fontFamily.LatoRegular}
+          fontSize={fontSize.smallPlus}
+          color={colors.gray}
+        >
           Checkout
         </Text>
       </CustomDiv>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <ShoppingCartIcon style={iconStyle} />
-        <Text fontSize={fontSize.smallPlus} color={colors.gray}>
+        <Text
+          fontFamily={fontFamily.LatoRegular}
+          fontSize={fontSize.smallPlus}
+          color={colors.gray}
+        >
           Cart
         </Text>
       </CustomDiv>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <LockIcon style={iconStyle} />
-        <Text fontSize={fontSize.smallPlus} color={colors.gray}>
+        <Text
+          fontFamily={fontFamily.LatoRegular}
+          fontSize={fontSize.smallPlus}
+          color={colors.gray}
+        >
           Login
         </Text>
       </CustomDiv>
