@@ -21,12 +21,25 @@ import "./assets/fonts/Montserrat-BoldItalic.ttf";
 import "./assets/fonts/Montserrat-ExtraBold.ttf";
 import "./assets/fonts/Montserrat-ExtraLight.ttf";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePageScreen from "./Screens/HomePageScreen/HomePageScreen";
+import ShopScreen from "./Screens/ShopScreen/ShopScreen";
+
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePageScreen />,
+    },
+    {
+      path: "/shop",
+      element: <ShopScreen />,
+    },
+  ]);
+
   return (
     <>
-      <Navigation />
-      <Slider />
-      <ProductsHomePage />
+      <RouterProvider router={router} />
     </>
   );
 };
