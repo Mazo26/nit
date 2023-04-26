@@ -64,9 +64,15 @@ const LinkBar = () => {
             <Link to='/shop' style={styles.linksLG}>
               Shop
             </Link>
-            <Link style={styles.linksLG}>Blog</Link>
-            <Link style={styles.linksLG}>About</Link>
-            <Link style={styles.linksLG}>Kontakt</Link>
+            <Link to='/blog' style={styles.linksLG}>
+              Blog
+            </Link>
+            <Link to='/about' style={styles.linksLG}>
+              About
+            </Link>
+            <Link to='/contact' style={styles.linksLG}>
+              Contact
+            </Link>
           </SimplifiedDiv>
         </Grid>
         <Grid item sm={6} md={6} lg={6}>
