@@ -20,6 +20,7 @@ const SuggestedCarousel = () => {
         interval={1000}
         swipeable
         centerMode
+        showThumbs={false}
         autoPlay
         centerSlidePercentage={33}
       >
