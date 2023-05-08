@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import { Grid } from "@mui/material";
 import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import article1 from "../../assets/images/home/product1.jpg";
 import article2 from "../../assets/images/home/product2.jpg";
 import article3 from "../../assets/images/home/product3.jpg";
+import { CartContext } from "../../context/CartContext";
 
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
@@ -14,42 +15,50 @@ export const articles = [
     title: "Article 1",
     description: loremText,
     image: article1,
-    price: "13$",
+    price: 13,
+    qty: 1,
   },
   {
     title: "Article 2",
     description: loremText,
     image: article2,
-    price: "21$",
+    price: 21,
+    qty: 1,
   },
   {
     title: "Article 3",
     description: loremText,
     image: article3,
-    price: "43$",
+    price: 43,
+    qty: 1,
   },
   {
     title: "Article 4",
     description: loremText,
     image: article2,
-    price: "62$",
+    price: 62,
+    qty: 1,
   },
   {
     title: "Article 5",
     description: loremText,
     image: article1,
-    price: "54$",
+    price: 54,
+    qty: 1,
   },
   {
     title: "Article 3",
     description: loremText,
     image: article3,
-    price: "43$",
+    price: 43,
+    qty: 1,
   },
 ];
 
 const ArticlesHomePage = () => {
   //Postaviti funkcije koje ce izlistavati artikle
+
+  const { setItems } = useContext(CartContext);
 
   return (
     <SimplifiedDiv style={{}}>
@@ -62,6 +71,7 @@ const ArticlesHomePage = () => {
                 description={article.description}
                 image={article.image}
                 price={article.price}
+                onClickButton={(value) => setItems((prev) => [...prev, value])}
               />
             </Grid>
           );
