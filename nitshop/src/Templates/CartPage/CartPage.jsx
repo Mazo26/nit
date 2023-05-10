@@ -112,7 +112,7 @@ const CartPage = () => {
                   fontSize: fontSize.optimal,
                 }}
               >
-                Web ID: 1089772
+                Web ID: {item.id}
               </span>
             </Text>
           </Grid>

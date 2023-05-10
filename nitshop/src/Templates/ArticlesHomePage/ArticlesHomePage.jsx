@@ -6,12 +6,14 @@ import article1 from "../../assets/images/home/product1.jpg";
 import article2 from "../../assets/images/home/product2.jpg";
 import article3 from "../../assets/images/home/product3.jpg";
 import { CartContext } from "../../context/CartContext";
+import { generateId } from "../../util/helpers";
 
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
 export const articles = [
   {
+    id: generateId(5),
     title: "Article 1",
     description: loremText,
     image: article1,
@@ -19,6 +21,7 @@ export const articles = [
     qty: 1,
   },
   {
+    id: generateId(5),
     title: "Article 2",
     description: loremText,
     image: article2,
@@ -26,6 +29,7 @@ export const articles = [
     qty: 1,
   },
   {
+    id: generateId(5),
     title: "Article 3",
     description: loremText,
     image: article3,
@@ -33,6 +37,7 @@ export const articles = [
     qty: 1,
   },
   {
+    id: generateId(5),
     title: "Article 4",
     description: loremText,
     image: article2,
@@ -40,6 +45,7 @@ export const articles = [
     qty: 1,
   },
   {
+    id: generateId(5),
     title: "Article 5",
     description: loremText,
     image: article1,
@@ -47,6 +53,7 @@ export const articles = [
     qty: 1,
   },
   {
+    id: generateId(5),
     title: "Article 3",
     description: loremText,
     image: article3,
@@ -58,7 +65,27 @@ export const articles = [
 const ArticlesHomePage = () => {
   //Postaviti funkcije koje ce izlistavati artikle
 
-  const { setItems } = useContext(CartContext);
+  const { items, setItems } = useContext(CartContext);
+
+  function addArticleHandler(article) {
+    let existingIndex = items.findIndex((item) => item.id === article.id);
+    console.log(existingIndex, article);
+    if (existingIndex >= 0) {
+      setItems(
+        items.map((item) => {
+          let quantity = item.qty + 1;
+          let price = item.price * quantity;
+          return item.id === article.id
+            ? { ...item, price, qty: quantity }
+            : item;
+        })
+      );
+    } else {
+      setItems((prev) => [...prev, article]);
+    }
+  }
+
+  console.log("items", items);
 
   return (
     <SimplifiedDiv style={{}}>
@@ -71,7 +98,8 @@ const ArticlesHomePage = () => {
                 description={article.description}
                 image={article.image}
                 price={article.price}
-                onClickButton={(value) => setItems((prev) => [...prev, value])}
+                article={article}
+                onClickButton={(value) => addArticleHandler(value)}
               />
             </Grid>
           );

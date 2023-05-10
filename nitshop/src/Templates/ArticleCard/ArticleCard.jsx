@@ -6,7 +6,14 @@ import { Card } from "@mui/material";
 import { colors, fontSize, fontWeight } from "../../util/theme";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
-const ArticleCard = ({ title, description, image, price, onClickButton }) => {
+const ArticleCard = ({
+  title,
+  description,
+  image,
+  price,
+  onClickButton,
+  article,
+}) => {
   const styles = {
     imageContainer: {
       width: "100%",
@@ -62,7 +69,7 @@ const ArticleCard = ({ title, description, image, price, onClickButton }) => {
           primary
           borderRadius='3px'
           padding='10px'
-          onClick={() => onClickButton({ image, price, title, qty: 1 })}
+          onClick={() => onClickButton(article)}
         >
           <ShoppingCartOutlined style={styles.shoppingCartIcon} />
           Add to cart
