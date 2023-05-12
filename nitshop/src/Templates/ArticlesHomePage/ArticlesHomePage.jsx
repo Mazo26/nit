@@ -7,6 +7,7 @@ import article2 from "../../assets/images/home/product2.jpg";
 import article3 from "../../assets/images/home/product3.jpg";
 import { CartContext } from "../../context/CartContext";
 import { generateId } from "../../util/helpers";
+import { UserContext } from "../../context/UserContext";
 
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
@@ -66,6 +67,9 @@ const ArticlesHomePage = () => {
   //Postaviti funkcije koje ce izlistavati artikle
 
   const { items, setItems } = useContext(CartContext);
+  const { setUser } = useContext(UserContext);
+
+  setUser({ name: "Elmaz", lName: "Niksic" });
 
   function addArticleHandler(article) {
     let existingIndex = items.findIndex((item) => item.id === article.id);

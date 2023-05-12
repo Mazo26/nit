@@ -26,6 +26,7 @@ import AboutScreen from "./Screens/AboutScreen/AboutScreen";
 import ContactScreen from "./Screens/ContactScreen/ContactScreen";
 import CartScreen from "./Screens/CartScreen/CartScreen";
 import CartContextProvider, { CartContext } from "./context/CartContext";
+import UserContextProvider from "./context/UserContext";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -57,9 +58,11 @@ const App = () => {
 
   return (
     <>
-      <CartContextProvider>
-        <RouterProvider router={router} />
-      </CartContextProvider>
+      <UserContextProvider>
+        <CartContextProvider>
+          <RouterProvider router={router} />
+        </CartContextProvider>
+      </UserContextProvider>
     </>
   );
 };
