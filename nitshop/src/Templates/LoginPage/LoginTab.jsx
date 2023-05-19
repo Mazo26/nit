@@ -1,10 +1,11 @@
 import { Grid } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import { colors, fontSize } from "../../util/theme";
 import { UserContext } from "../../context/UserContext";
+import { fetchAllUsers } from "../../api/userApi";
 
 const LoginTab = () => {
   const styles = {
@@ -54,7 +55,21 @@ const LoginTab = () => {
     },
   };
 
+  const [users, setUsers] = useState([]);
+
   const { user, setUser } = useContext(UserContext);
+
+  useEffect(() => {
+    let mount = false;
+
+    if (mount) return;
+    fetchAllUsers().then((allUsers) => {
+      setUsers(allUsers);
+      mount = true;
+    });
+  }, []);
+
+  console.log("users", users);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -74,7 +89,6 @@ const LoginTab = () => {
     console.log("logged in!");
   };
 
-  console.log(user);
   return (
     <Grid lg={12} style={styles.mainDiv} container>
       <Grid lg={5} md={5} display='flex' flexDirection='column'>
