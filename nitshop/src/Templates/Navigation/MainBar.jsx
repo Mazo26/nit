@@ -83,7 +83,7 @@ const MainBar = () => {
           fontSize={fontSize.smallPlus}
           color={colors.gray}
         >
-          Login
+          <Link to='/login'>Login</Link>
         </Text>
       </CustomDiv>
     </CustomDiv>
